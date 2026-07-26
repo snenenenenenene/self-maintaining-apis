@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://self-maintaining-apis-senne-bels-projects.vercel.app/sitemap.xml

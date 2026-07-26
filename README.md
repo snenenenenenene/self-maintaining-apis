@@ -1,10 +1,10 @@
 # self-maintaining-apis
 
-**Dependabot for API breakage.** When a vendor ships a breaking change, don't just get a red build — get a green PR.
+**Dependabot for API breakage.** When a vendor ships a breaking change, don't just get a red build, get a green PR.
 
-Point it at a repo and a dependency. It bumps the dep on a branch, runs your build, and if the upgrade broke your call sites it hands the errors to Claude, patches until the build is green, and opens the PR. If the bump was clean, you get the boring one-line PR. If it can't fix it in a few rounds, it stops and leaves the branch for a human — no half-migrations pushed silently.
+Point it at a repo and a dependency. It bumps the dep on a branch, runs your build, and if the upgrade broke your call sites it hands the errors to Claude, patches until the build is green, and opens the PR. If the bump was clean, you get the boring one-line PR. If it can't fix it in a few rounds, it stops and leaves the branch for a human, no half-migrations pushed silently.
 
-The fix step calls the **Anthropic API directly** — no Claude Code install, no interactive login — so it runs unattended in CI. Set `ANTHROPIC_API_KEY` and it works. (`gh` is used for the PR.)
+The fix step calls the **Anthropic API directly**, no Claude Code install, no interactive login, so it runs unattended in CI. Set `ANTHROPIC_API_KEY` and it works. (`gh` is used for the PR.)
 
 → **[self-maintaining-apis-senne-bels-projects.vercel.app](https://self-maintaining-apis-senne-bels-projects.vercel.app)**
 
@@ -36,14 +36,14 @@ A full example (schedule + matrix of watched deps) is in [`.github/workflows/sel
 
 ## How it works
 
-1. **Detect** — infers your package manager from the lockfile and the cheapest "does the API still fit" check (`typecheck` script → `build` script → bare `tsc --noEmit`).
-2. **Bump** (`upgrade` only) — `<pm> add <dep>@latest` on a fresh `self-maintain/bump-<dep>` branch.
-3. **Fix loop** — run the build; while red, send the exact errors + the referenced source files to Claude with a tight "migrate only the call sites, change nothing else" prompt, write the patched files back, and re-verify. Bounded to 3 rounds.
-4. **Ship** — commit, push, `gh pr create` with a summary of what broke and what got migrated. Still red after 3 rounds → exit non-zero, branch left for a human.
+1. **Detect**: infers your package manager from the lockfile and the cheapest "does the API still fit" check (`typecheck` script, then `build` script, then a bare `tsc --noEmit`).
+2. **Bump** (`upgrade` only): `<pm> add <dep>@latest` on a fresh `self-maintain/bump-<dep>` branch.
+3. **Fix loop**: run the build; while red, send the exact errors plus the referenced source files to Claude with a tight "migrate only the call sites, change nothing else" prompt, write the patched files back, and re-verify. Bounded to 3 rounds.
+4. **Ship**: commit, push, `gh pr create` with a summary of what broke and what got migrated. Still red after 3 rounds, it exits non-zero and leaves the branch for a human.
 
 ## Why this is the wedge
 
-Dependabot tells you a dependency changed. It doesn't fix your code when the change is breaking — that's still a human afternoon of reading changelogs and chasing type errors. This closes that last mile, and it's dogfoodable across every repo you already maintain.
+Dependabot tells you a dependency changed. It doesn't fix your code when the change is breaking. That part is still yours: read the changelog, find the moved API, patch the call sites, re-run. That work is a good fit for an agent, and you can point it at every repo you already maintain.
 
 ## Try it
 

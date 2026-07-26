@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Self-Maintaining APIs — the upgrade-and-autofix loop.
+// Self-Maintaining APIs, the upgrade-and-autofix loop.
 //
 //   self-maintain fix     <repo>          run the build; if broken, let Claude patch until green
 //   self-maintain upgrade <repo> <dep>    bump <dep> to latest on a branch, then fix, then open a PR
@@ -78,11 +78,11 @@ function filesFromBuildOutput(repo, out) {
 }
 
 // Ask Claude (Anthropic API, headless) to migrate the broken call sites and write
-// the corrected files back. No Claude Code / interactive login required — CI-ready.
+// the corrected files back. No Claude Code / interactive login required, CI-ready.
 async function anthropicFix(repo, buildOutput, dep, key) {
   const files = filesFromBuildOutput(repo, buildOutput);
   if (files.length === 0) {
-    console.log("  (no source files named in the build output — nothing to hand the model)");
+    console.log("  (no source files named in the build output, nothing to hand the model)");
     return false;
   }
   const context = dep
@@ -139,7 +139,7 @@ function writePatchedFiles(repo, text) {
 async function applyFix(repo, buildOutput, dep) {
   const key = process.env.ANTHROPIC_API_KEY;
   if (key) return anthropicFix(repo, buildOutput, dep, key);
-  console.log(`\n▶ no ANTHROPIC_API_KEY — falling back to the local claude CLI…`);
+  console.log(`\n▶ no ANTHROPIC_API_KEY, falling back to the local claude CLI…`);
   const prompt =
     `${dep ? `A dependency upgrade ("${dep}") broke the build.` : "The build is broken."} ` +
     `Here is the failing build output:\n\n${buildOutput}\n\n` +
@@ -167,7 +167,7 @@ async function main() {
     console.log(`▶ branch: ${branch}`);
     sh("git", ["checkout", "-b", branch], repo);
     const b = bump(repo, dep);
-    if (!b.ok) { console.error("bump failed (registry/network?) — aborting"); process.exit(1); }
+    if (!b.ok) { console.error("bump failed (registry/network?), aborting"); process.exit(1); }
   }
 
   // Detect → fix → verify, up to MAX_FIX_ROUNDS.
@@ -175,7 +175,7 @@ async function main() {
   let rounds = 0;
   while (!build.ok && rounds < MAX_FIX_ROUNDS) {
     rounds++;
-    console.log(`\n✗ build red — fix round ${rounds}/${MAX_FIX_ROUNDS}`);
+    console.log(`\n✗ build red, fix round ${rounds}/${MAX_FIX_ROUNDS}`);
     await applyFix(repo, build.out, dep);
     build = runBuild(repo);
   }
@@ -187,14 +187,16 @@ async function main() {
   console.log(`\n✓ build green${rounds ? ` after ${rounds} fix round(s)` : ""}.`);
 
   if (sub === "upgrade") {
-    sh("git", ["add", "-A"], repo);
+    // Stage only tracked files we touched (manifest, lockfile, patched sources);
+    // never sweep in a dirty working tree's untracked files.
+    sh("git", ["add", "-u"], repo);
     sh("git", ["commit", "-m", `chore(deps): bump ${dep} to latest + migrate call sites`], repo);
     const pushed = sh("git", ["push", "-u", "origin", branch], repo);
-    if (!pushed.ok) { console.error("push failed — is there a remote?"); process.exit(1); }
+    if (!pushed.ok) { console.error("push failed, is there a remote?"); process.exit(1); }
     const title = `chore(deps): bump ${dep} to latest`;
     const body = rounds
       ? `Automated by self-maintaining-apis.\n\nBumped \`${dep}\` to latest; the upgrade broke the build and Claude migrated the call sites over ${rounds} round(s). Build is green.`
-      : `Automated by self-maintaining-apis.\n\nBumped \`${dep}\` to latest. Clean upgrade — build stayed green, no code changes needed.`;
+      : `Automated by self-maintaining-apis.\n\nBumped \`${dep}\` to latest. Clean upgrade, build stayed green, no code changes needed.`;
     const pr = sh("gh", ["pr", "create", "--title", title, "--body", body], repo);
     if (pr.ok) console.log(`\n✓ PR opened.`);
   }

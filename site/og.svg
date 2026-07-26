@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="'Hanken Grotesk','Segoe UI',sans-serif">
+  <rect width="1200" height="630" fill="#0f1512"/>
+  <rect x="0" y="0" width="1200" height="630" fill="none"/>
+  <text x="80" y="132" font-family="ui-monospace,Menlo,monospace" font-size="26" fill="#5fe0a0">// dependabot for api breakage</text>
+  <text x="78" y="250" font-size="82" font-weight="800" letter-spacing="-3" fill="#eef4f0">A dependency upgrade</text>
+  <text x="78" y="346" font-size="82" font-weight="800" letter-spacing="-3" fill="#eef4f0">turned your build <tspan fill="#f5786a">red</tspan>.</text>
+  <text x="78" y="442" font-size="82" font-weight="800" letter-spacing="-3" fill="#eef4f0">Get a <tspan fill="#5fe0a0">green</tspan> PR back.</text>
+  <text x="80" y="556" font-family="ui-monospace,Menlo,monospace" font-size="27" fill="#8a938c"><tspan fill="#eef4f0">self-maintaining</tspan><tspan fill="#5fe0a0">-apis</tspan>   ·   npx self-maintaining-apis upgrade . @acme/sdk</text>
+</svg>
