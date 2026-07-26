@@ -1,0 +1,13 @@
+{
+  "name": "self-maintaining-apis",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Dependabot for API breakage: upgrade a dependency, run your build, and when it breaks let Claude patch the call sites and open the PR.",
+  "bin": {
+    "self-maintain": "bin/self-maintain.mjs"
+  },
+  "scripts": {
+    "demo": "node bin/self-maintain.mjs fix demo"
+  },
+  "license": "MIT"
+}
