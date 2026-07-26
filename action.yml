@@ -1,0 +1,38 @@
+name: "Self-Maintaining APIs"
+description: "When a dependency upgrade breaks your build, open a PR that migrates the call sites."
+branding:
+  icon: "git-pull-request"
+  color: "green"
+inputs:
+  dependency:
+    description: "npm package to bump to its latest version"
+    required: true
+  working-directory:
+    description: "Path to the project (where package.json lives)"
+    required: false
+    default: "."
+  anthropic-api-key:
+    description: "Anthropic API key used to migrate broken call sites (set as a repo secret)"
+    required: true
+  model:
+    description: "Claude model id for the fix step"
+    required: false
+    default: "claude-opus-4-8"
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: "20"
+    - name: Configure git + run self-maintain
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      env:
+        ANTHROPIC_API_KEY: ${{ inputs.anthropic-api-key }}
+        SELF_MAINTAIN_MODEL: ${{ inputs.model }}
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        git config --global user.name "self-maintaining-apis[bot]"
+        git config --global user.email "self-maintaining-apis@users.noreply.github.com"
+        node "$GITHUB_ACTION_PATH/bin/self-maintain.mjs" upgrade . "${{ inputs.dependency }}"

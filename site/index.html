@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>self-maintaining-apis — Dependabot for API breakage</title>
+<meta name="description" content="When a dependency upgrade breaks your build, don't just get a red build — get a green PR. An agent migrates your call sites and opens the fix." />
+<style>
+  :root {
+    --bg: #0a0b0e; --panel: #121319; --line: #23252e;
+    --ink: #eef0f4; --dim: #9aa0ad; --faint: #6a707c;
+    --green: #58e08e; --amber: #f0b429; --red: #ff6b6b;
+    --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Inter var", "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans);
+         line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: inherit; }
+  .wrap { max-width: 940px; margin: 0 auto; padding: 0 24px; }
+  .mono { font-family: var(--mono); }
+  .green { color: var(--green); }
+  .red { color: var(--red); }
+  .dim { color: var(--dim); }
+
+  header { padding: 22px 0; border-bottom: 1px solid var(--line); position: sticky; top: 0;
+           background: rgba(10,11,14,.8); backdrop-filter: blur(8px); z-index: 5; }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-family: var(--mono); font-size: 14px; letter-spacing: -.02em; }
+  .brand b { color: var(--green); font-weight: 600; }
+  .nav a { font-size: 13px; color: var(--dim); text-decoration: none; margin-left: 20px; }
+  .nav a:hover { color: var(--ink); }
+
+  .hero { padding: 92px 0 40px; }
+  .eyebrow { font-family: var(--mono); font-size: 12.5px; color: var(--green);
+             letter-spacing: .04em; text-transform: uppercase; margin-bottom: 20px; }
+  h1 { font-size: clamp(34px, 6vw, 60px); line-height: 1.02; letter-spacing: -.03em;
+       font-weight: 640; max-width: 15ch; }
+  h1 .u { background: linear-gradient(transparent 62%, rgba(88,224,142,.22) 0); }
+  .sub { margin-top: 22px; font-size: 18px; color: var(--dim); max-width: 56ch; }
+  .cta { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .btn { font-family: var(--mono); font-size: 13.5px; text-decoration: none; padding: 11px 18px;
+         border-radius: 9px; border: 1px solid var(--line); color: var(--ink); transition: .15s; }
+  .btn.primary { background: var(--green); color: #06210f; border-color: var(--green); font-weight: 600; }
+  .btn.primary:hover { filter: brightness(1.08); }
+  .btn.ghost:hover { border-color: var(--faint); }
+
+  .demo { margin: 44px 0 8px; border: 1px solid var(--line); border-radius: 14px;
+          overflow: hidden; background: var(--panel); }
+  .demo .bar { display: flex; align-items: center; gap: 8px; padding: 12px 16px;
+               border-bottom: 1px solid var(--line); }
+  .dot { width: 11px; height: 11px; border-radius: 50%; background: #2c2f39; }
+  .demo .bar .t { font-family: var(--mono); font-size: 12px; color: var(--faint); margin-left: 8px; }
+  .demo .body { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  @media (max-width: 760px) { .demo .body { grid-template-columns: 1fr; } }
+  .col { padding: 18px 20px; font-family: var(--mono); font-size: 12.5px; line-height: 1.7; }
+  .col + .col { border-left: 1px solid var(--line); }
+  @media (max-width: 760px) { .col + .col { border-left: 0; border-top: 1px solid var(--line); } }
+  .lbl { font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: var(--faint); margin-bottom: 12px; }
+  .del { color: #ff8f8f; background: rgba(255,107,107,.08); display: block; }
+  .add { color: var(--green); background: rgba(88,224,142,.08); display: block; }
+  .ctx { color: var(--dim); display: block; }
+  .fail { color: var(--red); } .ok { color: var(--green); }
+
+  section { padding: 64px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 13px; font-family: var(--mono); letter-spacing: .05em; text-transform: uppercase;
+       color: var(--green); margin-bottom: 28px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  @media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+  .step .n { font-family: var(--mono); color: var(--faint); font-size: 13px; }
+  .step h3 { font-size: 17px; margin: 8px 0 8px; letter-spacing: -.01em; }
+  .step p { color: var(--dim); font-size: 14.5px; }
+
+  pre { background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+        padding: 18px 20px; overflow-x: auto; font-family: var(--mono); font-size: 13px;
+        line-height: 1.7; color: var(--ink); }
+  pre .c { color: var(--faint); } pre .g { color: var(--green); }
+
+  .wedge { font-size: 20px; line-height: 1.5; max-width: 60ch; letter-spacing: -.01em; }
+  .wedge b { color: var(--ink); } .wedge { color: var(--dim); }
+
+  footer { padding: 40px 0 64px; border-top: 1px solid var(--line); color: var(--faint);
+           font-family: var(--mono); font-size: 12.5px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer a { color: var(--dim); text-decoration: none; } footer a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="brand"><b>self-maintaining</b>-apis</div>
+  <nav class="nav">
+    <a href="#how">How it works</a>
+    <a href="#use">Use it</a>
+    <a href="https://github.com/snenenenenenene/self-maintaining-apis">GitHub</a>
+  </nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div class="eyebrow">Dependabot for API breakage</div>
+  <h1>A dependency upgrade broke your build. Get a <span class="u">green PR</span>, not a red one.</h1>
+  <p class="sub">Dependabot tells you a version changed. It doesn't fix your code when the change is breaking — that's still a human afternoon of reading changelogs and chasing type errors. This closes that last mile.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://github.com/snenenenenenene/self-maintaining-apis">Get it on GitHub →</a>
+    <a class="btn ghost" href="#use">See the one-liner</a>
+  </div>
+
+  <div class="demo">
+    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="t">self-maintain upgrade . @acme/sdk</span></div>
+    <div class="body">
+      <div class="col">
+        <div class="lbl">1 · the upgrade breaks the build</div>
+        <span class="ctx">▶ bump: @acme/sdk → 2.0.0</span>
+        <span class="ctx">▶ build: tsc --noEmit</span>
+        <span class="fail">app.ts(7,9): error TS2554:</span>
+        <span class="fail">  Expected 2 arguments, but got 1.</span>
+        <span class="ctx">&nbsp;</span>
+        <span class="ctx">✗ build red — fix round 1/3</span>
+        <span class="ctx">▶ asking Claude to patch 1 file…</span>
+      </div>
+      <div class="col">
+        <div class="lbl">2 · the agent migrates the call site</div>
+        <span class="ctx">// v2: send(options) → send(channel, msg)</span>
+        <span class="del">- await send({ channel: "alerts",</span>
+        <span class="del">-   message: "build failed" });</span>
+        <span class="add">+ await send("alerts", "build failed");</span>
+        <span class="ctx">&nbsp;</span>
+        <span class="ok">✓ build green after 1 fix round</span>
+        <span class="ok">✓ PR opened →</span>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step"><div class="n">01</div><h3>Bump &amp; run</h3>
+      <p>On a fresh branch it bumps the dependency to latest and runs your build — the cheapest "does the API still fit" check you have (typecheck, then build).</p></div>
+    <div class="step"><div class="n">02</div><h3>Migrate &amp; verify</h3>
+      <p>If it breaks, the exact errors and your call sites go to Claude with a tight "migrate only, don't refactor" brief. It patches, re-runs, and loops — bounded to 3 rounds.</p></div>
+    <div class="step"><div class="n">03</div><h3>Ship or step back</h3>
+      <p>Green → it opens the PR with a summary of what broke and what changed. Still red after 3 rounds → it stops and leaves the branch. No half-migrations pushed silently.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Why this is the wedge</h2>
+  <p class="wedge"><b>Dependabot</b> and Renovate keep your versions current but hand you the breakage. The fix is still manual — and it's the same shape every time: read the changelog, find the moved API, patch the call sites, re-run. <b>That last mile is exactly what an agent is good at</b>, and it's dogfoodable across every repo you already maintain.</p>
+</div></section>
+
+<section id="use"><div class="wrap">
+  <h2>Use it</h2>
+  <pre><span class="c"># one-off, locally</span>
+npx self-maintaining-apis upgrade <span class="g">.</span> @acme/sdk
+
+<span class="c"># or in CI — a GitHub Action opens the PR for you</span>
+<span class="c">- uses:</span> snenenenenenene/self-maintaining-apis@v1
+  <span class="c">with:</span>
+    dependency: @acme/sdk
+    anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}</pre>
+  <p class="dim" style="margin-top:16px;font-size:14px">No Claude Code install and no interactive login — the fix step calls the Anthropic API directly, so it runs unattended in CI. Clean bump → boring PR. Can't fix it in three rounds → it stops and leaves the branch for a human.</p>
+</div></section>
+</main>
+
+<footer><div class="wrap" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:12px">
+  <span>self-maintaining-apis · MIT</span>
+  <span><a href="https://github.com/snenenenenenene/self-maintaining-apis">github →</a></span>
+</div></footer>
+</body>
+</html>

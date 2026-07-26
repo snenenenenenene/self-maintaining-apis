@@ -1,0 +1,37 @@
+# Copy this into your own repo as .github/workflows/self-maintain.yml
+# It bumps a dependency to latest and, if the upgrade breaks the build,
+# opens a PR that migrates the call sites. Trigger it by hand (with the
+# dependency name) or on a weekly schedule.
+name: Self-Maintaining APIs
+
+on:
+  workflow_dispatch:
+    inputs:
+      dependency:
+        description: "npm package to bump to latest"
+        required: true
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+
+permissions:
+  contents: write # push the branch
+  pull-requests: write # open the PR
+
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # On the schedule, watch these deps. workflow_dispatch overrides with its input.
+        dependency: ${{ github.event_name == 'workflow_dispatch' && fromJSON(format('["{0}"]', github.event.inputs.dependency)) || fromJSON('["@ai-sdk/react","zod"]') }}
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm ci # or: pnpm install --frozen-lockfile
+      - uses: snenenenenenene/self-maintaining-apis@v1
+        with:
+          dependency: ${{ matrix.dependency }}
+          anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}

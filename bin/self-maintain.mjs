@@ -6,10 +6,13 @@
 //
 // No API key: shells out to the local `claude` CLI for the fix step, and `gh` for the PR.
 import { spawnSync } from "node:child_process";
-import { existsSync, readFileSync } from "node:fs";
-import { join } from "node:path";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { join, resolve, relative, isAbsolute } from "node:path";
 
 const MAX_FIX_ROUNDS = 3;
+const MODEL = process.env.SELF_MAINTAIN_MODEL || "claude-opus-4-8";
+const MAX_FILE_BYTES = 60_000; // don't ship a giant generated file to the model
+const MAX_FILES = 12;
 
 function sh(cmd, args, cwd, { quiet = false } = {}) {
   const r = spawnSync(cmd, args, { cwd, encoding: "utf8" });
@@ -54,21 +57,98 @@ function bump(repo, dep) {
   return sh(pm, add, repo);
 }
 
-function claudeFix(repo, buildOutput, dep) {
-  const context = dep
-    ? `You just upgraded the dependency "${dep}" to its latest version and the build broke.`
-    : `The build is broken.`;
-  const prompt =
-    `${context} Here is the failing build output:\n\n${buildOutput}\n\n` +
-    `Edit the source files in this repo so the build passes. ` +
-    `Only migrate the code to the new API surface — do not change unrelated logic, do not touch tests unless the failure is in a test, and do not downgrade the dependency. ` +
-    `When done, stop.`;
-  console.log(`\n▶ asking claude to patch…`);
-  // acceptEdits so the headless run can actually write the fix.
-  return sh("claude", ["-p", prompt, "--permission-mode", "acceptEdits"], repo);
+// Pull the source files a build error names, so we can hand the model the code it
+// has to migrate. Matches tsc (`app.ts(7,9):`), eslint/node (`src/a.ts:12:3`), etc.
+function filesFromBuildOutput(repo, out) {
+  const rx = /([\w./@-]+\.(?:tsx?|jsx?|mjs|cjs|vue|svelte))[(:]/g;
+  const seen = new Set();
+  const files = [];
+  for (const m of out.matchAll(rx)) {
+    const rel = m[1].replace(/^\.\//, "");
+    if (seen.has(rel)) continue;
+    seen.add(rel);
+    const abs = resolve(repo, rel);
+    if (!existsSync(abs) || relative(repo, abs).startsWith("..")) continue;
+    const content = readFileSync(abs, "utf8");
+    if (content.length > MAX_FILE_BYTES) continue;
+    files.push({ rel, abs, content });
+    if (files.length >= MAX_FILES) break;
+  }
+  return files;
 }
 
-function main() {
+// Ask Claude (Anthropic API, headless) to migrate the broken call sites and write
+// the corrected files back. No Claude Code / interactive login required — CI-ready.
+async function anthropicFix(repo, buildOutput, dep, key) {
+  const files = filesFromBuildOutput(repo, buildOutput);
+  if (files.length === 0) {
+    console.log("  (no source files named in the build output — nothing to hand the model)");
+    return false;
+  }
+  const context = dep
+    ? `A dependency upgrade ("${dep}" → latest) broke the build.`
+    : `The build is broken.`;
+  const prompt =
+    `${context} Below are the failing build errors, then the current contents of the files they reference.\n\n` +
+    `Return the COMPLETE corrected contents of ONLY the files that must change to make the build pass. ` +
+    `Migrate the code to the dependency's new API surface. Do not refactor, do not change unrelated logic, do not touch tests unless the error is in a test, do not downgrade the dependency.\n\n` +
+    `Format each changed file EXACTLY as:\n===FILE: <relative/path>===\n\`\`\`\n<full file content>\n\`\`\`\n\n` +
+    `=== BUILD ERRORS ===\n${buildOutput}\n\n` +
+    files.map((f) => `===FILE: ${f.rel}===\n\`\`\`\n${f.content}\n\`\`\``).join("\n\n");
+
+  console.log(`\n▶ asking Claude (${MODEL}) to patch ${files.length} file(s) via the API…`);
+  let text;
+  try {
+    const res = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01" },
+      body: JSON.stringify({ model: MODEL, max_tokens: 16000, messages: [{ role: "user", content: prompt }] }),
+    });
+    if (!res.ok) { console.error(`  API error ${res.status}: ${(await res.text()).slice(0, 200)}`); return false; }
+    const json = await res.json();
+    text = (json.content || []).filter((b) => b.type === "text").map((b) => b.text).join("");
+  } catch (e) {
+    console.error(`  API call failed: ${e.message}`);
+    return false;
+  }
+  return writePatchedFiles(repo, text);
+}
+
+// Parse the ===FILE:===\n```…``` blocks the model returns and write each back,
+// refusing any path that escapes the repo.
+function writePatchedFiles(repo, text) {
+  const rx = /===FILE:\s*(.+?)\s*===\s*```[\w-]*\n([\s\S]*?)\n```/g;
+  let wrote = 0;
+  for (const m of text.matchAll(rx)) {
+    const rel = m[1].trim();
+    const abs = resolve(repo, rel);
+    if (isAbsolute(rel) || relative(repo, abs).startsWith("..")) {
+      console.error(`  refusing to write outside repo: ${rel}`);
+      continue;
+    }
+    writeFileSync(abs, m[2].endsWith("\n") ? m[2] : m[2] + "\n");
+    console.log(`  patched ${rel}`);
+    wrote++;
+  }
+  if (!wrote) console.error("  model returned no parseable file blocks");
+  return wrote > 0;
+}
+
+// Fixer entry point: prefer the headless Anthropic API (works in CI); fall back to
+// the local `claude` CLI only when no API key is set.
+async function applyFix(repo, buildOutput, dep) {
+  const key = process.env.ANTHROPIC_API_KEY;
+  if (key) return anthropicFix(repo, buildOutput, dep, key);
+  console.log(`\n▶ no ANTHROPIC_API_KEY — falling back to the local claude CLI…`);
+  const prompt =
+    `${dep ? `A dependency upgrade ("${dep}") broke the build.` : "The build is broken."} ` +
+    `Here is the failing build output:\n\n${buildOutput}\n\n` +
+    `Edit the source files so the build passes. Migrate only the broken call sites; don't refactor or downgrade the dependency.`;
+  const r = sh("claude", ["-p", prompt, "--permission-mode", "acceptEdits"], repo);
+  return r.ok;
+}
+
+async function main() {
   const [, , sub, repoArg, dep] = process.argv;
   const repo = repoArg && (repoArg.startsWith("/") ? repoArg : join(process.cwd(), repoArg));
 
@@ -96,7 +176,7 @@ function main() {
   while (!build.ok && rounds < MAX_FIX_ROUNDS) {
     rounds++;
     console.log(`\n✗ build red — fix round ${rounds}/${MAX_FIX_ROUNDS}`);
-    claudeFix(repo, build.out, dep);
+    await applyFix(repo, build.out, dep);
     build = runBuild(repo);
   }
 
@@ -120,4 +200,7 @@ function main() {
   }
 }
 
-main();
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});
