@@ -27,14 +27,29 @@ Repo: https://github.com/snenenenenenene/self-maintaining-apis
 
 ## Distribution checklist
 
-- [ ] Tag `v1` so the Action resolves (`snenenenenenene/self-maintaining-apis@v1`), done at launch.
-- [ ] Publish to the **GitHub Action Marketplace** (repo → Releases → "Publish this Action"; `action.yml` already has `branding`).
+- [x] Tag `v1` so the Action resolves (`snenenenenenene/self-maintaining-apis@v1`).
+- [x] Publish to the **GitHub Action Marketplace** (Dependency management + Continuous integration).
+- [x] `npm publish` so `npx self-maintaining-apis` works without a clone.
 - [ ] Show HN (above). Post Tue–Thu morning US time; reply to every comment.
 - [ ] Demo GIF: record `self-maintain fix demo` going red → patched → green; drop it at the top of the README (the one asset still worth adding by hand).
-- [ ] `npm publish` so `npx self-maintaining-apis` works without a clone (add a `bin`, already declared in package.json).
 - [ ] Post in r/devops and the Renovate/Dependabot discussions as a complement, not a competitor.
 
-## The two forks (decide before sinking weeks in)
+## The two forks (decided)
 
-- **Feature vs company.** Narrow "Dependabot for breakage" could be shipped by Renovate/GitHub as a feature. The venture-scale version is broader: autonomous codebase maintenance / self-healing dependencies.
-- **YC vs Canada.** YC is SF + 3 months in-person, which pulls against the Sept-2027 Canada move. Get users first; let traction decide whether YC (or acquihire interest) is worth the pull.
+### Feature vs company: wedge narrow, roadmap broad
+
+The narrow "Dependabot for breakage" is the right wedge because it is concrete, demoable, and useful in the first minute. It is not the moat: GitHub or Renovate could ship it, and the code is trivial to clone. Treat the tool as a feature today and let usage decide whether there is a company. The defensible assets are the ones that only accrue from real runs:
+
+1. A breakage corpus: which upgrades break what, and the migrations that actually passed a build.
+2. A trust track record: verify with your own build, leave the branch, never push a half-migration. In autonomous code-editing, safety reputation is the product.
+3. Distribution: Marketplace, npm, and CI integration.
+
+Action: instrument every run (what broke, did the fix pass, rounds used). That telemetry, not a guess, resolves this fork. Do not commit to "company" scope before there are users.
+
+### YC vs Canada: do not optimize for YC now; reframe around the move
+
+- Premature. YC matters only if the fork above resolves toward "company" and there is traction. Neither exists yet, and a solo founder with no users has low YC odds regardless (YC pushes hard for 2+ founders).
+- Timing is not strictly either/or. A single batch that ends before the Sept-2027 move is additive; YC's real pull is the expectation of staying near SF long-term, which is what fights a committed relocation.
+- Reframe: if the thesis holds and the move happens anyway, Canada's Start-up Visa Program is a founder immigration pathway, so the company becomes the vehicle for the move rather than its casualty. Canadian accelerators (Techstars Toronto, NEXT Canada) serve both goals at once.
+
+Action: get users, preserve optionality. If traction appears before end-2026, evaluate Canadian founder programs first; treat SF YC as opt-in only if a batch cleanly fits the pre-move window and a co-founder is in place.
