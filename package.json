@@ -6,6 +6,7 @@
   "bin": {
     "self-maintain": "bin/self-maintain.mjs"
   },
+  "files": ["bin/", "action.yml", "README.md"],
   "scripts": {
     "demo": "node bin/self-maintain.mjs fix demo"
   },
