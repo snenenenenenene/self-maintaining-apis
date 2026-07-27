@@ -1,5 +1,5 @@
 name: "Self-Maintaining APIs"
-description: "When a dependency upgrade breaks your build, open a PR that migrates the call sites."
+description: "Don't just get a red build from a breaking upgrade. Get a green PR that migrates your call sites."
 branding:
   icon: "git-pull-request"
   color: "green"
