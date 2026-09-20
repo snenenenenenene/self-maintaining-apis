@@ -254,7 +254,7 @@ test("fix is refused when any entry needs manual review, and when the range alre
     assert.match(report, /Quoted line: "Remove support for `proof_of_registration`/);
     assert.match(report, new RegExp(`Fetched at: ${FETCHED_AT}`));
     assert.match(report, /resolves to 22\.6\.2; newest stable 22\.6\.2/);
-    assert.doesNotMatch(report, /—/, "no em dashes in committed prose");
+    assert.doesNotMatch(report, /\u2014/, "no em dashes in committed prose");
   } finally {
     rmSync(withUse, { recursive: true, force: true });
     rmSync(upToDate, { recursive: true, force: true });
