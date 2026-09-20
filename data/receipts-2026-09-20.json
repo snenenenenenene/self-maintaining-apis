@@ -1,0 +1,1307 @@
+{
+  "date": "2026-09-20",
+  "generated_at": "2026-09-20T08:32:39.371Z",
+  "sources_unreachable": [],
+  "entries": [
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/changelog/spend-management-enterprise-flex",
+      "title": "Spend Management expands to Enterprise Flexible Commitment plans",
+      "url": "https://vercel.com/changelog/spend-management-enterprise-flex",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://vercel.com/changelog/spend-management-enterprise-flex",
+        "quote": "Spend Management expands to Enterprise Flexible Commitment plans",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/changelog/webmcp-mcp-handler",
+      "title": "WebMCP support now available in mcp-handler",
+      "url": "https://vercel.com/changelog/webmcp-mcp-handler",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://vercel.com/changelog/webmcp-mcp-handler",
+        "quote": "WebMCP support now available in mcp-handler",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/changelog/v0-now-reads-npm-credentials-from-shared-environment-variables",
+      "title": "v0 now reads npm credentials from shared environment variables",
+      "url": "https://vercel.com/changelog/v0-now-reads-npm-credentials-from-shared-environment-variables",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://vercel.com/changelog/v0-now-reads-npm-credentials-from-shared-environment-variables",
+        "quote": "v0 now reads npm credentials from shared environment variables",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/blog/ai-gateway-jev-model-launch",
+      "title": "Jev is the fastest-adopted model in AI Gateway history",
+      "url": "https://vercel.com/blog/ai-gateway-jev-model-launch",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://vercel.com/blog/ai-gateway-jev-model-launch",
+        "quote": "Jev is the fastest-adopted model in AI Gateway history",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/blog/reproducing-disclosing-and-fixing-the-libheif-vulnerability-with-hacktron-and-the-maintainers",
+      "title": "Reproducing, disclosing, and fixing the libheif vulnerability with Hacktron and the maintainers",
+      "url": "https://vercel.com/blog/reproducing-disclosing-and-fixing-the-libheif-vulnerability-with-hacktron-and-the-maintainers",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://vercel.com/blog/reproducing-disclosing-and-fixing-the-libheif-vulnerability-with-hacktron-and-the-maintainers",
+        "quote": "Reproducing, disclosing, and fixing the libheif vulnerability with Hacktron and the maintainers",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/changelog/glm-5-3-flashx-now-available-on-ai-gateway",
+      "title": "GLM 5.3 FlashX now available on AI Gateway",
+      "url": "https://vercel.com/changelog/glm-5-3-flashx-now-available-on-ai-gateway",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://vercel.com/changelog/glm-5-3-flashx-now-available-on-ai-gateway",
+        "quote": "GLM 5.3 FlashX now available on AI Gateway",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/changelog/sub-second-artifact-deployments-are-now-supported-in-vercel-cli",
+      "title": "Sub-second artifact deployments are now supported in Vercel CLI",
+      "url": "https://vercel.com/changelog/sub-second-artifact-deployments-are-now-supported-in-vercel-cli",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://vercel.com/changelog/sub-second-artifact-deployments-are-now-supported-in-vercel-cli",
+        "quote": "Sub-second artifact deployments are now supported in Vercel CLI",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/changelog/turbo-build-machines-can-now-be-enabled-per-deployment",
+      "title": "Turbo build machines can now be enabled per deployment",
+      "url": "https://vercel.com/changelog/turbo-build-machines-can-now-be-enabled-per-deployment",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://vercel.com/changelog/turbo-build-machines-can-now-be-enabled-per-deployment",
+        "quote": "Turbo build machines can now be enabled per deployment",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/changelog/run-terminal-bench-and-other-harbor-evals-on-vercel-sandbox",
+      "title": "Run Terminal-Bench and other Harbor evals on Vercel Sandbox",
+      "url": "https://vercel.com/changelog/run-terminal-bench-and-other-harbor-evals-on-vercel-sandbox",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://vercel.com/changelog/run-terminal-bench-and-other-harbor-evals-on-vercel-sandbox",
+        "quote": "Run Terminal-Bench and other Harbor evals on Vercel Sandbox",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/changelog/skills-cli-notion-skills",
+      "title": "The skills CLI now supports Notion hosted skills",
+      "url": "https://vercel.com/changelog/skills-cli-notion-skills",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://vercel.com/changelog/skills-cli-notion-skills",
+        "quote": "The skills CLI now supports Notion hosted skills",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/blog/ai-gateway-production-index-september-2026",
+      "title": "Open-weight models take 56% of token volume, Astra doubles Fable 5.1 spend",
+      "url": "https://vercel.com/blog/ai-gateway-production-index-september-2026",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://vercel.com/blog/ai-gateway-production-index-september-2026",
+        "quote": "Open-weight models take 56% of token volume, Astra doubles Fable 5.1 spend",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway",
+      "title": "GPT-Live 1 now available on AI Gateway",
+      "url": "https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway",
+      "verdict": "breaking",
+      "reason": "matched pattern: remove/removed/removal",
+      "receipt": {
+        "url": "https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway",
+        "quote": "Full duplex removes that boundary, so a user can pause, interrupt, or add detail while GPT-Live is speaking.",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/changelog/custom-environments-support-for-marketplace-integrations",
+      "title": "Native Marketplace integrations now support custom environments",
+      "url": "https://vercel.com/changelog/custom-environments-support-for-marketplace-integrations",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://vercel.com/changelog/custom-environments-support-for-marketplace-integrations",
+        "quote": "Native Marketplace integrations now support custom environments",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage",
+      "title": "Hobby projects now retain fewer deployments to free up storage",
+      "url": "https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage",
+      "verdict": "breaking",
+      "reason": "matched pattern: no longer",
+      "receipt": {
+        "url": "https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage",
+        "quote": "Preview deployments no longer get their own protection.",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/changelog/secure-compute-and-static-ip-builds-start-64-faster",
+      "title": "Secure Compute and Static IP builds start 64% faster",
+      "url": "https://vercel.com/changelog/secure-compute-and-static-ip-builds-start-64-faster",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://vercel.com/changelog/secure-compute-and-static-ip-builds-start-64-faster",
+        "quote": "Secure Compute and Static IP builds start 64% faster",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/changelog/mem0-joins-the-vercel-marketplace",
+      "title": "Mem0 joins the Vercel Marketplace",
+      "url": "https://vercel.com/changelog/mem0-joins-the-vercel-marketplace",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://vercel.com/changelog/mem0-joins-the-vercel-marketplace",
+        "quote": "Mem0 joins the Vercel Marketplace",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway",
+      "title": "TypeSafe AI's Jev now available on AI Gateway",
+      "url": "https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway",
+      "verdict": "breaking",
+      "reason": "matched pattern: remove/removed/removal",
+      "receipt": {
+        "url": "https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway",
+        "quote": "That removes unnecessary text generation and makes it straightforward to automate clear cases while routing uncertain ones to review.",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/changelog/is-agentic-report-categories",
+      "title": "Is Agentic now tailors its audit by site type",
+      "url": "https://vercel.com/changelog/is-agentic-report-categories",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://vercel.com/changelog/is-agentic-report-categories",
+        "quote": "Is Agentic now tailors its audit by site type",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/blog/how-delphi-ships-100-times-a-day-with-its-python-backend-on-vercel",
+      "title": "How Delphi ships 100 times a day with its Python backend on Vercel",
+      "url": "https://vercel.com/blog/how-delphi-ships-100-times-a-day-with-its-python-backend-on-vercel",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://vercel.com/blog/how-delphi-ships-100-times-a-day-with-its-python-backend-on-vercel",
+        "quote": "How Delphi ships 100 times a day with its Python backend on Vercel",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/changelog/gemini-3-8-live-models-now-available-on-ai-gateway",
+      "title": "Gemini 3.8 Live models now available on AI Gateway",
+      "url": "https://vercel.com/changelog/gemini-3-8-live-models-now-available-on-ai-gateway",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://vercel.com/changelog/gemini-3-8-live-models-now-available-on-ai-gateway",
+        "quote": "Gemini 3.8 Live models now available on AI Gateway",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/headless-webhook-api",
+      "title": "Headless Webhook API",
+      "url": "https://resend.com/changelog/headless-webhook-api",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/headless-webhook-api",
+        "quote": "Headless Webhook API",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/list-clicked-links-api",
+      "title": "List Clicked Links API",
+      "url": "https://resend.com/changelog/list-clicked-links-api",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/list-clicked-links-api",
+        "quote": "List Clicked Links API",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/update-segment-api",
+      "title": "Update Segment API",
+      "url": "https://resend.com/changelog/update-segment-api",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/update-segment-api",
+        "quote": "Update Segment API",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/table-component",
+      "title": "New Table Component",
+      "url": "https://resend.com/changelog/table-component",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/table-component",
+        "quote": "New Table Component",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/v0-integration",
+      "title": "Vercel v0 Integration",
+      "url": "https://resend.com/changelog/v0-integration",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/v0-integration",
+        "quote": "Vercel v0 Integration",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/link-checker",
+      "title": "Link Checker",
+      "url": "https://resend.com/changelog/link-checker",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/link-checker",
+        "quote": "Link Checker",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/sso",
+      "title": "Single Sign-On",
+      "url": "https://resend.com/changelog/sso",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/sso",
+        "quote": "Single Sign-On",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/update-api-key-name",
+      "title": "Update API Key Name",
+      "url": "https://resend.com/changelog/update-api-key-name",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/update-api-key-name",
+        "quote": "Update API Key Name",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/share-email-api",
+      "title": "Share Email API",
+      "url": "https://resend.com/changelog/share-email-api",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/share-email-api",
+        "quote": "Share Email API",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/email-metrics-api",
+      "title": "Email Metrics API",
+      "url": "https://resend.com/changelog/email-metrics-api",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/email-metrics-api",
+        "quote": "Email Metrics API",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/cursor-plugin",
+      "title": "Official Resend plugin for Cursor",
+      "url": "https://resend.com/changelog/cursor-plugin",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/cursor-plugin",
+        "quote": "Official Resend plugin for Cursor",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/duplicate-automation-api",
+      "title": "Duplicate Automation API",
+      "url": "https://resend.com/changelog/duplicate-automation-api",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/duplicate-automation-api",
+        "quote": "Duplicate Automation API",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/three-domains-on-the-free-tier",
+      "title": "More Domains on the Free Tier",
+      "url": "https://resend.com/changelog/three-domains-on-the-free-tier",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/three-domains-on-the-free-tier",
+        "quote": "More Domains on the Free Tier",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/oauth-client-id-metadata-document-support",
+      "title": "OAuth Client ID Metadata Document Support",
+      "url": "https://resend.com/changelog/oauth-client-id-metadata-document-support",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/oauth-client-id-metadata-document-support",
+        "quote": "OAuth Client ID Metadata Document Support",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/cancel-broadcast-api",
+      "title": "Cancel Broadcast API",
+      "url": "https://resend.com/changelog/cancel-broadcast-api",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/cancel-broadcast-api",
+        "quote": "Cancel Broadcast API",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/agent-plugins-standard",
+      "title": "Agent Plugin Support",
+      "url": "https://resend.com/changelog/agent-plugins-standard",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/agent-plugins-standard",
+        "quote": "Agent Plugin Support",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/email-compatibility-checker",
+      "title": "Email Compatibility Checker",
+      "url": "https://resend.com/changelog/email-compatibility-checker",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/email-compatibility-checker",
+        "quote": "Email Compatibility Checker",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/resend-mcp-supports-the-new-2026-07-28-spec",
+      "title": "Remote MCP Supports the 2026-07-28 Spec",
+      "url": "https://resend.com/changelog/resend-mcp-supports-the-new-2026-07-28-spec",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/resend-mcp-supports-the-new-2026-07-28-spec",
+        "quote": "Remote MCP Supports the 2026-07-28 Spec",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/template-folders",
+      "title": "Template Folders",
+      "url": "https://resend.com/changelog/template-folders",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/template-folders",
+        "quote": "Template Folders",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/suppression-list-support",
+      "title": "Email Suppressions",
+      "url": "https://resend.com/changelog/suppression-list-support",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/suppression-list-support",
+        "quote": "Email Suppressions",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "392172969",
+      "title": "v7.20.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.20.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.20.0",
+        "quote": "v7.20.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "391734030",
+      "title": "v7.19.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.19.0",
+      "verdict": "breaking",
+      "reason": "matched pattern: deprecate/deprecated/deprecation",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.19.0",
+        "quote": "api:** deprecate MCP connector_id ([#2767](https://github.com/openai/openai-node/issues/2767)) ([645c5ad](https://github.com/openai/openai-node/commit/645c5ad06d097712958b51016165b5277c931a84))",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "391141095",
+      "title": "v7.18.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.18.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.18.0",
+        "quote": "v7.18.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "390205988",
+      "title": "v7.17.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.17.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.17.0",
+        "quote": "v7.17.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "389316744",
+      "title": "v7.16.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.16.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.16.0",
+        "quote": "v7.16.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "386569143",
+      "title": "v7.15.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.15.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.15.0",
+        "quote": "v7.15.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "386488127",
+      "title": "v7.14.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.14.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.14.0",
+        "quote": "v7.14.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "385640096",
+      "title": "v7.13.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.13.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.13.0",
+        "quote": "v7.13.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "385160468",
+      "title": "v7.12.1",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.12.1",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.12.1",
+        "quote": "v7.12.1",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "385140787",
+      "title": "v7.12.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.12.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.12.0",
+        "quote": "v7.12.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "384902894",
+      "title": "v7.11.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.11.0",
+      "verdict": "breaking",
+      "reason": "matched pattern: remove/removed/removal",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.11.0",
+        "quote": "clarify Response types and remove unused handwritten code ([#2660](https://github.com/openai/openai-node/issues/2660)) ([86152ab](https://github.com/openai/openai-node/commit/86152ab0eaa54335e092d9a07d014aa06e5a4739))",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "382292029",
+      "title": "v7.10.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.10.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.10.0",
+        "quote": "v7.10.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "380921278",
+      "title": "v7.9.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.9.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.9.0",
+        "quote": "v7.9.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "377980687",
+      "title": "v7.8.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.8.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.8.0",
+        "quote": "v7.8.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "377506658",
+      "title": "v7.7.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.7.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.7.0",
+        "quote": "v7.7.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "377443368",
+      "title": "v7.6.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.6.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.6.0",
+        "quote": "v7.6.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "371895456",
+      "title": "v7.5.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.5.0",
+      "verdict": "breaking",
+      "reason": "matched pattern: deprecate/deprecated/deprecation",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.5.0",
+        "quote": "api:** deprecate Sora video APIs ([#2313](https://github.com/openai/openai-node/issues/2313)) ([4424b40](https://github.com/openai/openai-node/commit/4424b404b56b8cab2e5fa18c8d3e4a317ad62d1b))",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "364514564",
+      "title": "v7.4.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.4.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.4.0",
+        "quote": "v7.4.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "363156072",
+      "title": "v7.3.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.3.0",
+      "verdict": "breaking",
+      "reason": "matched pattern: remove/removed/removal",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.3.0",
+        "quote": "remove Brewfile setup path ([#2031](https://github.com/openai/openai-node/issues/2031)) ([6b63159](https://github.com/openai/openai-node/commit/6b631599de7d91f90767f9c6df1e9d53e36768b5))",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "OpenAI Node SDK Releases",
+      "id": "362603625",
+      "title": "v7.2.0",
+      "url": "https://github.com/openai/openai-node/releases/tag/v7.2.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/openai/openai-node/releases/tag/v7.2.0",
+        "quote": "v7.2.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "390344759",
+      "title": "v22.7.0-alpha.4",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.7.0-alpha.4",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.7.0-alpha.4",
+        "quote": "v22.7.0-alpha.4",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "385863970",
+      "title": "v22.7.0-alpha.3",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.7.0-alpha.3",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.7.0-alpha.3",
+        "quote": "v22.7.0-alpha.3",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "385849050",
+      "title": "v22.6.2",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.6.2",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.6.2",
+        "quote": "v22.6.2",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "381640701",
+      "title": "v22.7.0-alpha.2",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.7.0-alpha.2",
+      "verdict": "breaking",
+      "reason": "matched pattern: remove/removed/removal",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.7.0-alpha.2",
+        "quote": "Remove support for `execute` and `submit` methods on resource `V2.Core.ApprovalRequest`",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "380741412",
+      "title": "v22.6.1",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.6.1",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.6.1",
+        "quote": "v22.6.1",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "377563710",
+      "title": "v22.7.0-alpha.1",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.7.0-alpha.1",
+      "verdict": "breaking",
+      "reason": "matched pattern: remove/removed/removal",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.7.0-alpha.1",
+        "quote": "Remove support for `sequra_payments` on `Account.capabilities`",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "377562351",
+      "title": "v22.7.0-beta.1",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.7.0-beta.1",
+      "verdict": "breaking",
+      "reason": "matched pattern: remove/removed/removal",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.7.0-beta.1",
+        "quote": "Remove support for `payment_method_types` on `PaymentIntentConfirmParams`, `PaymentIntentCreateParams`, `PaymentIntentUpdateParams`, `SetupIntentCreateParams`, and `SetupIntentUpdateParams`",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "377560565",
+      "title": "v22.6.0",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.6.0",
+      "verdict": "breaking",
+      "reason": "matched pattern: major version bump",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.6.0",
+        "quote": "In the next major version, we'll change the exception thrown from `StripeAPIError` to `StripeConnectionError` and document it accordingly.",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "373398278",
+      "title": "v22.6.0-alpha.2",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.6.0-alpha.2",
+      "verdict": "breaking",
+      "reason": "matched pattern: remove/removed/removal",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.6.0-alpha.2",
+        "quote": "Remove support for resource `Billing.FeedbackOptions`",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "369598969",
+      "title": "v22.6.0-alpha.1",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.6.0-alpha.1",
+      "verdict": "breaking",
+      "reason": "matched pattern: remove/removed/removal",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.6.0-alpha.1",
+        "quote": "Remove support for values `partner_disabled_dispute_rate`, `partner_disabled_responsibilities`, `partner_disabled_restricted_business`, and `partner_disabled_suspected_fraud` from enums `Account.future_requirements.errors[].code`, `Account.requirements.errors[].code`, `BankAccount.future_requirement",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "368224724",
+      "title": "v22.5.0",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.5.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.5.0",
+        "quote": "v22.5.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "365860314",
+      "title": "v22.5.0-alpha.2",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.5.0-alpha.2",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.5.0-alpha.2",
+        "quote": "v22.5.0-alpha.2",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "362170815",
+      "title": "v22.5.0-alpha.1",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.5.0-alpha.1",
+      "verdict": "breaking",
+      "reason": "matched pattern: remove/removed/removal",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.5.0-alpha.1",
+        "quote": "Remove support for `managed_by` on `V2.MoneyManagement.FinancialAccount`",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "362107573",
+      "title": "v22.5.0-beta.1",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.5.0-beta.1",
+      "verdict": "breaking",
+      "reason": "matched pattern: remove/removed/removal",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.5.0-beta.1",
+        "quote": "Remove support for `taxes` on `ChargeCaptureParams.payment_details.car_rental_data[].total.tax`, `ChargeCaptureParams.payment_details.flight_data[].total.tax`, `ChargeCaptureParams.payment_details.lodging_data[].total.tax`, `ChargeUpdateParams.payment_details.car_rental_data[].total.tax`, `ChargeUpd",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "362104631",
+      "title": "v22.4.0",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.4.0",
+      "verdict": "breaking",
+      "reason": "matched pattern: remove/removed/removal",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.4.0",
+        "quote": "Remove support for `proof_of_registration` on `AccountCreateParams.documents`.",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "358465251",
+      "title": "v22.4.0-alpha.5",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.4.0-alpha.5",
+      "verdict": "breaking",
+      "reason": "matched pattern: remove/removed/removal",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.4.0-alpha.5",
+        "quote": "Remove support for `taxes` on `PaymentIntent.payment_details.car_rental_data[].total.tax`, `PaymentIntent.payment_details.flight_data[].total.tax`, and `PaymentIntent.payment_details.lodging_data[].total.tax`",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "355292088",
+      "title": "v22.4.0-alpha.4",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.4.0-alpha.4",
+      "verdict": "breaking",
+      "reason": "matched pattern: remove/removed/removal",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.4.0-alpha.4",
+        "quote": "Remove support for resource `FrMealVouchersOnboarding`",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "354806770",
+      "title": "v22.3.2",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.3.2",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.3.2",
+        "quote": "v22.3.2",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "351695690",
+      "title": "v22.3.1",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.3.1",
+      "verdict": "breaking",
+      "reason": "matched pattern: remove/removed/removal",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.3.1",
+        "quote": "[#2781](https://github.com/stripe/stripe-node/pull/2781) Remove unused Retry-After header support",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "Stripe Node SDK Releases",
+      "id": "351228815",
+      "title": "v22.4.0-alpha.3",
+      "url": "https://github.com/stripe/stripe-node/releases/tag/v22.4.0-alpha.3",
+      "verdict": "breaking",
+      "reason": "matched pattern: remove/removed/removal",
+      "receipt": {
+        "url": "https://github.com/stripe/stripe-node/releases/tag/v22.4.0-alpha.3",
+        "quote": "Remove support for `tax_ids` on `Checkout.Session.collected_information`",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.28.1-preview-inboxes.0",
+      "title": "resend@6.28.1-preview-inboxes.0",
+      "url": "https://www.npmjs.com/package/resend/v/6.28.1-preview-inboxes.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.28.1-preview-inboxes.0",
+        "quote": "resend@6.28.1-preview-inboxes.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.28.1",
+      "title": "resend@6.28.1",
+      "url": "https://www.npmjs.com/package/resend/v/6.28.1",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.28.1",
+        "quote": "resend@6.28.1",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.28.0",
+      "title": "resend@6.28.0",
+      "url": "https://www.npmjs.com/package/resend/v/6.28.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.28.0",
+        "quote": "resend@6.28.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.28.0-preview-inboxes.0",
+      "title": "resend@6.28.0-preview-inboxes.0",
+      "url": "https://www.npmjs.com/package/resend/v/6.28.0-preview-inboxes.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.28.0-preview-inboxes.0",
+        "quote": "resend@6.28.0-preview-inboxes.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.27.0",
+      "title": "resend@6.27.0",
+      "url": "https://www.npmjs.com/package/resend/v/6.27.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.27.0",
+        "quote": "resend@6.27.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.26.0",
+      "title": "resend@6.26.0",
+      "url": "https://www.npmjs.com/package/resend/v/6.26.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.26.0",
+        "quote": "resend@6.26.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.25.0",
+      "title": "resend@6.25.0",
+      "url": "https://www.npmjs.com/package/resend/v/6.25.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.25.0",
+        "quote": "resend@6.25.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.24.0",
+      "title": "resend@6.24.0",
+      "url": "https://www.npmjs.com/package/resend/v/6.24.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.24.0",
+        "quote": "resend@6.24.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.23.0",
+      "title": "resend@6.23.0",
+      "url": "https://www.npmjs.com/package/resend/v/6.23.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.23.0",
+        "quote": "resend@6.23.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.22.1",
+      "title": "resend@6.22.1",
+      "url": "https://www.npmjs.com/package/resend/v/6.22.1",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.22.1",
+        "quote": "resend@6.22.1",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.22.0",
+      "title": "resend@6.22.0",
+      "url": "https://www.npmjs.com/package/resend/v/6.22.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.22.0",
+        "quote": "resend@6.22.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.21.0",
+      "title": "resend@6.21.0",
+      "url": "https://www.npmjs.com/package/resend/v/6.21.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.21.0",
+        "quote": "resend@6.21.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.20.0",
+      "title": "resend@6.20.0",
+      "url": "https://www.npmjs.com/package/resend/v/6.20.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.20.0",
+        "quote": "resend@6.20.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.19.0-preview-headless-dashboard.7",
+      "title": "resend@6.19.0-preview-headless-dashboard.7",
+      "url": "https://www.npmjs.com/package/resend/v/6.19.0-preview-headless-dashboard.7",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.19.0-preview-headless-dashboard.7",
+        "quote": "resend@6.19.0-preview-headless-dashboard.7",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.19.0-preview-headless-dashboard.6",
+      "title": "resend@6.19.0-preview-headless-dashboard.6",
+      "url": "https://www.npmjs.com/package/resend/v/6.19.0-preview-headless-dashboard.6",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.19.0-preview-headless-dashboard.6",
+        "quote": "resend@6.19.0-preview-headless-dashboard.6",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.19.0",
+      "title": "resend@6.19.0",
+      "url": "https://www.npmjs.com/package/resend/v/6.19.0",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.19.0",
+        "quote": "resend@6.19.0",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.19.0-preview-headless-dashboard.5",
+      "title": "resend@6.19.0-preview-headless-dashboard.5",
+      "url": "https://www.npmjs.com/package/resend/v/6.19.0-preview-headless-dashboard.5",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.19.0-preview-headless-dashboard.5",
+        "quote": "resend@6.19.0-preview-headless-dashboard.5",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.19.0-preview-headless-dashboard.4",
+      "title": "resend@6.19.0-preview-headless-dashboard.4",
+      "url": "https://www.npmjs.com/package/resend/v/6.19.0-preview-headless-dashboard.4",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.19.0-preview-headless-dashboard.4",
+        "quote": "resend@6.19.0-preview-headless-dashboard.4",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.19.0-preview-headless-dashboard.3",
+      "title": "resend@6.19.0-preview-headless-dashboard.3",
+      "url": "https://www.npmjs.com/package/resend/v/6.19.0-preview-headless-dashboard.3",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.19.0-preview-headless-dashboard.3",
+        "quote": "resend@6.19.0-preview-headless-dashboard.3",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    },
+    {
+      "source": "npm: resend",
+      "id": "6.19.0-preview-headless-dashboard.2",
+      "title": "resend@6.19.0-preview-headless-dashboard.2",
+      "url": "https://www.npmjs.com/package/resend/v/6.19.0-preview-headless-dashboard.2",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://www.npmjs.com/package/resend/v/6.19.0-preview-headless-dashboard.2",
+        "quote": "resend@6.19.0-preview-headless-dashboard.2",
+        "fetched_at": "2026-09-20T08:32:39.371Z"
+      }
+    }
+  ]
+}

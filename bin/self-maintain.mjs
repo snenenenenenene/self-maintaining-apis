@@ -3,11 +3,14 @@
 //
 //   self-maintain fix     <repo>          run the build; if broken, let Claude patch until green
 //   self-maintain upgrade <repo> <dep>    bump <dep> to latest on a branch, then fix, then open a PR
+//   self-maintain watch                   poll vendor changelogs, classify breaking entries, keep receipts
 //
 // No API key: shells out to the local `claude` CLI for the fix step, and `gh` for the PR.
 import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
-import { join, resolve, relative, isAbsolute } from "node:path";
+import { join, resolve, relative, isAbsolute, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import { runWatch } from "./lib/watch.mjs";
 
 const MAX_FIX_ROUNDS = 3;
 const MODEL = process.env.SELF_MAINTAIN_MODEL || "claude-opus-4-8";
@@ -150,10 +153,17 @@ async function applyFix(repo, buildOutput, dep) {
 
 async function main() {
   const [, , sub, repoArg, dep] = process.argv;
+
+  if (sub === "watch") {
+    const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+    const result = await runWatch({ repoRoot });
+    process.exit(result.exitCode);
+  }
+
   const repo = repoArg && (repoArg.startsWith("/") ? repoArg : join(process.cwd(), repoArg));
 
   if (!sub || !repo || (sub === "upgrade" && !dep)) {
-    console.log("usage:\n  self-maintain fix <repo>\n  self-maintain upgrade <repo> <dep>");
+    console.log("usage:\n  self-maintain fix <repo>\n  self-maintain upgrade <repo> <dep>\n  self-maintain watch");
     process.exit(2);
   }
   if (!existsSync(join(repo, "package.json")) && !existsSync(join(repo, "tsconfig.json"))) {
