@@ -19,6 +19,10 @@ node bin/self-maintain.mjs upgrade <repo> <dep>
 
 # Poll vendor changelogs, classify new entries as breaking or not, keep receipts.
 node bin/self-maintain.mjs watch
+
+# Join the newest breaking receipts against <repo>'s package.json and open one PR
+# (a range bump, or a report with a precise no-fix-needed verdict). --dry-run prints the report only.
+node bin/self-maintain.mjs map <repo> [--dry-run]
 ```
 
 Set `ANTHROPIC_API_KEY` for the fix step. Override the model with `SELF_MAINTAIN_MODEL` (default `claude-opus-4-8`). With no key set, it falls back to your local [`claude`](https://claude.com/claude-code) CLI.
@@ -47,6 +51,10 @@ A full example (schedule + matrix of watched deps) is in [`.github/workflows/sel
 ### Watch (top of the loop)
 
 `watch` polls a handful of real vendor changelog/release feeds (Vercel, Resend, the OpenAI and Stripe Node SDK GitHub releases, and the `resend` npm registry entry), and for each new entry it hasn't seen before, runs it through a deterministic keyword rule set (remove/deprecate/rename/breaking change/no longer/sunset/EOL/not supported/migration required/auth or token change/requires an update/major version bump). Every verdict keeps a receipt: the source URL, the exact quoted line that triggered it, and when it was fetched. State lives in `data/watch-state.json` so re-runs only report what's new; each run also writes `data/receipts-<date>.json` and a human-readable `docs/watcher-<date>.md`. Exits `1` only when a *new* entry classifies as breaking, `0` otherwise; an unreachable source is logged and skipped, never a crash. No model call, no API key, no dependencies — it's the input a later step will map onto call sites in a target repo.
+
+### Map (middle of the loop)
+
+`map <repo>` reads the newest `data/receipts-<date>.json`, keeps the `breaking` entries, and joins them by package name against `<repo>/package.json` (dependencies, devDependencies, optionalDependencies). For each match it does version arithmetic on the declared range against the npm registry's version list (prereleases count as unreachable unless the range names one) and a static search of the repo's own source (skipping `node_modules`, `.git`, `.next`, `dist`, `build`, `out`, `.vercel`, `coverage`, and anything over 1 MB) for the symbols the quoted line names, restricted to files that import the package. The result is exactly one PR on that repo, opened from a fresh `git worktree` on a `self-maintain/map-<pkg>-<date>` branch off `origin/<default>`, never on the default branch: outcome `fix` bumps the one range line in `package.json` (only when the range does not reach the newest stable version and no call site uses an affected symbol), otherwise outcome `verdict` commits a single `self-maintain-report.md` with the receipt, the arithmetic, and the call-site table (unreachable, no call sites, or manual review required with the call sites listed). Exits non-zero when the path does not resolve or nothing joins. Deterministic, no model call, no API key; needs an authenticated `gh` for the PR.
 
 ## Why this is the wedge
 

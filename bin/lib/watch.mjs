@@ -149,6 +149,10 @@ export function parseNpmRegistryText(text, pkgName) {
 // URL, and the parser for that kind. Every URL here was fetched successfully
 // (200, parseable) in the session that added it; see the PR body for the
 // first-200-chars proof per source.
+//
+// `package` is the npm name a source speaks for, so the map step can join an
+// entry against a repo's package.json. Only the npm registry and the SDK
+// release feeds name one; product changelogs (Vercel, Resend) do not.
 export const SOURCES = [
   { name: "Vercel Changelog", kind: "rss", url: "https://vercel.com/atom", parse: parseFeedText },
   { name: "Resend Changelog", kind: "rss", url: "https://resend.com/changelog/rss.xml", parse: parseFeedText },
@@ -157,20 +161,29 @@ export const SOURCES = [
     kind: "json",
     url: "https://api.github.com/repos/openai/openai-node/releases",
     parse: parseGithubReleasesText,
+    package: "openai",
   },
   {
     name: "Stripe Node SDK Releases",
     kind: "json",
     url: "https://api.github.com/repos/stripe/stripe-node/releases",
     parse: parseGithubReleasesText,
+    package: "stripe",
   },
   {
     name: "npm: resend",
     kind: "json",
     url: "https://registry.npmjs.org/resend",
     parse: (text) => parseNpmRegistryText(text, "resend"),
+    package: "resend",
   },
 ];
+
+// Source name -> npm package, for receipts written before `package` was recorded.
+export function packageForSource(sourceName) {
+  const source = SOURCES.find((s) => s.name === sourceName);
+  return source && source.package ? source.package : null;
+}
 
 // One request per source per run, polite headers, bounded timeout. Returns
 // null (never throws) on any network/HTTP/parse failure, so one bad source
@@ -277,6 +290,7 @@ export async function runWatch({
         reason,
         receipt: { url, quote, fetched_at: fetchedAt },
       };
+      if (source.package) record.package = source.package;
       records.push(record);
       state.seen[key] = true;
       if (verdict === "breaking") breakingCount++;
