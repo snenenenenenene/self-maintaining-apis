@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-21",
+  "generated_at": "2026-09-21T16:29:13.869Z",
+  "sources_unreachable": [],
+  "entries": [
+    {
+      "source": "Vercel Changelog",
+      "id": "https://vercel.com/changelog/grok-4-7-now-available-and-40-off-on-ai-gateway-fx-eve",
+      "title": "Grok 4.7 now available and 40% off on AI Gateway, fx, and eve",
+      "url": "https://vercel.com/changelog/grok-4-7-now-available-and-40-off-on-ai-gateway-fx-eve",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://vercel.com/changelog/grok-4-7-now-available-and-40-off-on-ai-gateway-fx-eve",
+        "quote": "Grok 4.7 now available and 40% off on AI Gateway, fx, and eve",
+        "fetched_at": "2026-09-21T16:29:13.869Z"
+      }
+    },
+    {
+      "source": "Resend Changelog",
+      "id": "https://resend.com/changelog/duplicate-broadcast-api",
+      "title": "Duplicate Broadcast API",
+      "url": "https://resend.com/changelog/duplicate-broadcast-api",
+      "verdict": "non-breaking",
+      "reason": "no breaking pattern matched",
+      "receipt": {
+        "url": "https://resend.com/changelog/duplicate-broadcast-api",
+        "quote": "Duplicate Broadcast API",
+        "fetched_at": "2026-09-21T16:29:13.869Z"
+      }
+    }
+  ]
+}

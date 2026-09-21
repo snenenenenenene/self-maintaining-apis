@@ -99,6 +99,8 @@
     "npm: resend:6.19.0-preview-headless-dashboard.5": true,
     "npm: resend:6.19.0-preview-headless-dashboard.4": true,
     "npm: resend:6.19.0-preview-headless-dashboard.3": true,
-    "npm: resend:6.19.0-preview-headless-dashboard.2": true
+    "npm: resend:6.19.0-preview-headless-dashboard.2": true,
+    "Vercel Changelog:https://vercel.com/changelog/grok-4-7-now-available-and-40-off-on-ai-gateway-fx-eve": true,
+    "Resend Changelog:https://resend.com/changelog/duplicate-broadcast-api": true
   }
 }
