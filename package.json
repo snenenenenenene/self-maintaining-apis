@@ -8,7 +8,8 @@
   },
   "files": ["bin/", "action.yml", "README.md"],
   "scripts": {
-    "demo": "node bin/self-maintain.mjs fix demo"
+    "demo": "node bin/self-maintain.mjs fix demo",
+    "test": "node --test"
   },
   "license": "MIT"
 }
